@@ -1,0 +1,33 @@
+import  datatime
+import  pytest
+"""
+__author__ = '10'
+"""
+
+class Test_Calculate:
+  
+    def test_cal(self, a, b, c):
+        startTime = datatime.datatime.now()
+        print("测试开始执行时间：",startTime)
+        print("cal方法被调用")
+        res = []
+        data = [x for x in [a, b, c] if type(x) == int]
+        if len(data) == 3:
+            if a+b+c != 5:
+                print("err")
+            elif a+b+c == 5:
+                for i in [a, b, c]:
+                    if i > 0:
+                        res.append(i)
+                    else:
+                        pass
+                print(res)
+        elif len(data) != 3:
+            print("数据类型错误")
+            
+        endTime = datatime.datatime.now()
+        print("测试执行结束时间：",startTime)
+        print("执行使用总时长：" , (endTime -startTime).seconds)
+
+
+    
